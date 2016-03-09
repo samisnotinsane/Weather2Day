@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainMenuController">
+   <children>
+      <ImageView id="logo-im" fitHeight="109.0" fitWidth="251.0" opacity="0.46" pickOnBounds="true">
+         <image>
+            <Image url="@res/logo.jpg" />
+         </image>
+      </ImageView>
+      <Button id="btn-temp" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="T E M P E R A T U R E" />
+      <Button id="btn-crw" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="C R O S S W I N D S" />
+      <Button id="btn-prec" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="P R E C I P I T A T I O N" />
+      <Button id="btn-risk" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="R I S K S" />
+      <Button id="btn-dayl" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="D A Y L I G H T" />
+      <Button id="btn-vis" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="V I S I B I L I T Y" />
+      <Button id="btn-close" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="X" />
+   </children>
+</VBox>

@@ -1,0 +1,34 @@
+
+.btn {
+-fx-background-color: #BF3523;
+-fx-text-fill: #FFFFFF;
+-fx-background-radius: 0pt;
+}
+
+#btn-temp {
+-fx-background-color: #FFBD42;
+}
+
+#btn-crw {
+-fx-background-color: #43E5A7;
+}
+
+#btn-prec {
+-fx-background-color: #39B3E5;
+}
+
+#btn-risk {
+-fx-background-color: #FF6243;
+}
+
+#btn-dayl {
+-fx-background-color: #FFE632;
+}
+
+#btn-vis {
+-fx-background-color: #29E5DD;
+}
+
+#logo-im {
+-fx-image: logo.jpg;
+}
