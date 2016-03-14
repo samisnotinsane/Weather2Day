@@ -1,8 +1,16 @@
 
+.pan {
+-fx-background-color: #FFB449;
+}
+
 .btn {
 -fx-background-color: #BF3523;
 -fx-text-fill: #FFFFFF;
 -fx-background-radius: 0pt;
+}
+
+.lbl {
+-fx-text-fill: #FFFFFF;
 }
 
 #btn-temp {
@@ -30,5 +38,9 @@
 }
 
 #logo-im {
--fx-image: logo.jpg;
+-fx-image: url(logo.jpg);
+}
+
+#temp-val {
+-fx-font-size: 70pt;
 }
