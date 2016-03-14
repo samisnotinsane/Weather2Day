@@ -9,10 +9,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TemperatureController">
    <children>
-      <Label fx:id="lblCurrentTime" layoutX="203.0" layoutY="14.0" styleClass="lbl" text="13:51" />
+      <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
       <Label layoutX="83.0" layoutY="44.0" styleClass="lbl" text="Temperature" />
       <Label id="temp-val" fx:id="lblCurrentTemp" layoutX="94.0" layoutY="168.0" prefHeight="33.0" prefWidth="21.0" styleClass="lbl" text="7" />
       <Label layoutX="149.0" layoutY="175.0" styleClass="lbl" text="o" />
