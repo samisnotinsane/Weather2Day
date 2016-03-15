@@ -25,6 +25,10 @@ public class MainMenuController implements Initializable {
        Main.showTemperature(event);
     }
 
+    public void btnPrecHandler(ActionEvent event) throws IOException {
+        Main.showPrecipitation(event);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
