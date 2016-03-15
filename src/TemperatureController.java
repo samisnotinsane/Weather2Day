@@ -44,25 +44,6 @@ public class TemperatureController implements Initializable {
         timeline.play();
     }
 
-    // detects whether mouse is being clicked and being kept held
-    // used for invoking the main menu
-    // code source: http://stackoverflow.com/questions/25601266/how-to-achieve-javafx-mouse-event-push-and-hold
-//    private void addPressAndHoldHandler(Node node, Duration holdTime, EventHandler<MouseEvent> handler) {
-//        class Wrapper<T> { T content ; }
-//        Wrapper<MouseEvent> eventWrapper = new Wrapper<>();
-//
-//        PauseTransition holdTimer = new PauseTransition(holdTime);
-//        holdTimer.setOnFinished(event -> handler.handle(eventWrapper.content));
-//
-//
-//        node.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
-//            eventWrapper.content = event ;
-//            holdTimer.playFromStart();
-//        });
-//        node.addEventHandler(MouseEvent.MOUSE_RELEASED, event -> holdTimer.stop());
-//        node.addEventHandler(MouseEvent.DRAG_DETECTED, event -> holdTimer.stop());
-//    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showTime();
