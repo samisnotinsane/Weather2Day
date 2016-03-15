@@ -24,7 +24,7 @@ public class PrecipitationController implements Initializable{
     @FXML
     public Label lblCurrentTime;
     @FXML
-    public AnchorPane crwPane = new AnchorPane();
+    public AnchorPane precPane = new AnchorPane();
 
     // displays the current time in 24hr format (HH:mm)
     public void showTime() {
@@ -48,11 +48,10 @@ public class PrecipitationController implements Initializable{
 
         // detects whether mouse is being right-clicked
         // used for invoking the main menu
-        crwPane.setOnMousePressed(new EventHandler<MouseEvent>() {
+        precPane.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent t) {
                 if (t.isSecondaryButtonDown()) {
-                    System.out.println("secondary engaged");
                     // invoke main menu
                     try {
                         Main.showMainMenu();

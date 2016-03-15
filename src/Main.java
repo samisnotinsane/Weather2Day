@@ -34,26 +34,16 @@ public class Main extends Application {
 
     }
 
-    public static void showTemperature(ActionEvent event) throws IOException {
-        Parent temperatureRoot = FXMLLoader.load(Main.class.getResource("temperature.fxml"));
-        scene = new Scene(temperatureRoot);
-        // now place scene on stage
-        Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        homeStage.setScene(scene);
-        homeStage.show();
-        System.out.println("showing temperature");
-    }
-
-    public static void showPrecipitation(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("precipitation.fxml"));
+    public static void showScene(ActionEvent event, String url) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource(url));
         scene = new Scene(root);
         // now place scene on stage
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        System.out.println("showing " + url);
         stage.show();
-        System.out.println("showing precipitation");
-    }
 
+    }
 
     public static void main(String[] args) {
         launch(args);

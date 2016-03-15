@@ -9,11 +9,11 @@
    <children>
       <ImageView id="logo-im" fitHeight="109.0" fitWidth="251.0" opacity="0.46" pickOnBounds="true" />
       <Button id="btn-temp" fx:id="btnTemp" mnemonicParsing="false" onAction="#btnTempHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="T E M P E R A T U R E" />
-      <Button id="btn-crw" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="C R O S S W I N D S" />
+      <Button id="btn-crw" mnemonicParsing="false" onAction="#btnCrwHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="C R O S S W I N D S" />
       <Button id="btn-prec" mnemonicParsing="false" onAction="#btnPrecHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="P R E C I P I T A T I O N" />
-      <Button id="btn-risk" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="R I S K S" />
-      <Button id="btn-dayl" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="D A Y L I G H T" />
-      <Button id="btn-vis" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="V I S I B I L I T Y" />
+      <Button id="btn-risk" mnemonicParsing="false" onAction="#btnRiskHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="R I S K S" />
+      <Button id="btn-dayl" mnemonicParsing="false" onAction="#btnDaylHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="D A Y L I G H T" />
+      <Button id="btn-vis" mnemonicParsing="false" onAction="#btnVisHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="V I S I B I L I T Y" />
       <Button id="btn-close" fx:id="btnQuit" mnemonicParsing="false" onAction="#btnQuitHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="X" />
    </children>
 </VBox>

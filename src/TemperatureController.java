@@ -54,7 +54,6 @@ public class TemperatureController implements Initializable {
             @Override
             public void handle(MouseEvent t) {
                 if (t.isSecondaryButtonDown()) {
-                    System.out.println("secondary engaged");
                     // invoke main menu
                     try {
                         Main.showMainMenu();
