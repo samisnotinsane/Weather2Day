@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="prec-pan" fx:id="precPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #39B3E5;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrecipitationController">
+<AnchorPane fx:id="precPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #39B3E5;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrecipitationController">
    <children>
       <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
       <Label fx:id="lblConditions" layoutX="112.0" layoutY="44.0" styleClass="lbl" text="Rain" />

@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="crw-pan" fx:id="crwPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #43E5A7;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TemperatureController">
+<AnchorPane id="crwPan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #43E5A7;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CrosswindsController">
    <children>
       <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
       <Label layoutX="88.0" layoutY="44.0" styleClass="lbl" text="Crosswinds" />
