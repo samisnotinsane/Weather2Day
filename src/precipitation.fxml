@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="crw-pan" fx:id="crwPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #43E5A7;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TemperatureController">
+   <children>
+      <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
+      <Label layoutX="88.0" layoutY="44.0" styleClass="lbl" text="Crosswinds" />
+      <Label id="lbl-loc-cty" fx:id="lblWindDir" alignment="CENTER" layoutX="117.0" layoutY="359.0" prefHeight="17.0" prefWidth="17.0" styleClass="lbl" text="N" wrapText="true" />
+      <Label id="lbl-loc-con" fx:id="lblWindSpeed" alignment="CENTER" layoutX="102.0" layoutY="413.0" prefHeight="17.0" prefWidth="17.0" styleClass="lbl" text="0" wrapText="true" />
+      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/gps-on.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCrw" fitHeight="176.0" fitWidth="171.0" layoutX="40.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="118.0" layoutY="413.0" styleClass="lbl" text="km/h" />
+      <ImageView fx:id="imgWindDirection" fitHeight="35.0" fitWidth="31.0" layoutX="110.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="lblTemperature" layoutX="202.0" layoutY="33.0" styleClass="lbl" text="7" />
+      <Label alignment="CENTER" layoutX="211.0" layoutY="29.0" styleClass="lbl" text="o">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="214.0" layoutY="38.0" styleClass="lbl" text="c">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
