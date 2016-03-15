@@ -1,3 +1,2 @@
 # Weather2Day
-Weather app implemented in Java Swing. Uses Yahoo weather data.
-Modes: mobile and tablet.
+Weather app implemented in JavaFX framework. Mobile and tablet modes.
