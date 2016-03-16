@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="tempPan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TemperatureController">
+   <children>
+      <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
+      <Label layoutX="83.0" layoutY="44.0" styleClass="lbl" text="Temperature" />
+      <Label id="temp-val" fx:id="lblCurrentTemp" layoutX="94.0" layoutY="168.0" prefHeight="33.0" prefWidth="21.0" styleClass="lbl" text="7" />
+      <Label layoutX="149.0" layoutY="175.0" styleClass="lbl" text="o" />
+      <Label layoutX="149.0" layoutY="247.0" styleClass="lbl" text="c" />
+      <Label id="lbl-loc-cty" fx:id="lblCurrentCity" layoutX="102.0" layoutY="389.0" styleClass="lbl" text="London" wrapText="true" />
+      <Label id="lbl-loc-con" fx:id="lblCurrentCountry" layoutX="100.0" layoutY="407.0" styleClass="lbl" text="England" wrapText="true" />
+      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/gps-on.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

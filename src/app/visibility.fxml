@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="prec-pan" fx:id="crwPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #29E5DD;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.VisibilityController">
+   <children>
+      <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
+      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/gps-on.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCrw" fitHeight="155.0" fitWidth="194.0" layoutX="48.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/vis.png" />
+         </image></ImageView>
+      <Label fx:id="lblTemperature" layoutX="202.0" layoutY="33.0" styleClass="lbl" text="7" />
+      <Label alignment="CENTER" layoutX="211.0" layoutY="29.0" styleClass="lbl" text="o">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="214.0" layoutY="38.0" styleClass="lbl" text="c">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label id="lbl-loc-cty" fx:id="lblWindDir1" alignment="CENTER" layoutX="77.0" layoutY="50.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="Visibility" wrapText="true" />
+      <Label id="lbl-loc-cty" fx:id="lblWindDir2" alignment="CENTER" layoutX="77.0" layoutY="332.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="0.00 km" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="111.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/cross.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

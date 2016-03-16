@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="prec-pan" fx:id="crwPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #FFE632;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.DaylightController">
+   <children>
+      <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
+      <Label id="lbl-loc-cty" fx:id="lblWindDir" alignment="CENTER" layoutX="79.0" layoutY="335.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="Dusk" wrapText="true" />
+      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/gps-on.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCrw" fitHeight="163.0" fitWidth="125.0" layoutX="65.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/sun_icon.jpg" />
+         </image></ImageView>
+      <Label fx:id="lblTemperature" layoutX="202.0" layoutY="33.0" styleClass="lbl" text="7" />
+      <Label alignment="CENTER" layoutX="211.0" layoutY="29.0" styleClass="lbl" text="o">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="214.0" layoutY="38.0" styleClass="lbl" text="c">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label id="lbl-loc-cty" fx:id="lblWindDir1" alignment="CENTER" layoutX="72.0" layoutY="49.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="Daylight" wrapText="true" />
+      <Label id="lbl-loc-cty" fx:id="lblWindDir2" alignment="CENTER" layoutX="79.0" layoutY="306.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="00:00" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label id="lbl-loc-cty" fx:id="lblWindDir3" alignment="CENTER" layoutX="72.0" layoutY="100.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="Dawn" wrapText="true" />
+      <Label id="lbl-loc-cty" fx:id="lblWindDir21" alignment="CENTER" layoutX="72.0" layoutY="117.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="00:00" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
