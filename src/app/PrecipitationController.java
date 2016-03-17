@@ -49,6 +49,7 @@ public class PrecipitationController implements Initializable {
         showTime();
         showTemperature();
         showPrecip();
+        showConditions();
 
         // detects whether mouse is being right-clicked
         // used for invoking the main menu
@@ -96,18 +97,18 @@ public class PrecipitationController implements Initializable {
     }
     
     public void showPrecip() {
-        Weather.currently();
+        //Weather.currently();
         String precip = Weather.precipIntensity();
-        //Double tem = Double.parseDouble(precip);
-        
-        //precip = (int)Math.round(tem) + "";
-      
         // display this in the label
         lblPrecipLevels.setText(precip + " mm/hr");
     }
     
     public void showConditions() {
-        
+        String cn = Weather.currentSummary();
+        cn = cn.replace("\"", "");
+        //cn = cn.substring(0, cn.length());
+        System.out.println("showConditions: "+cn);
+        lblCurrentConditions.setText(cn);
     }
     
 }
