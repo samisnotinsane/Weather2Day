@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -22,9 +23,13 @@ public class MainMenuController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    @FXML
+    public Label lblCurrentTemp;
+    
      @FXML
     public void btnQuitHandler() {
-        System.exit(1);
+        System.exit(0);
     }
     private String url;
 
@@ -63,10 +68,23 @@ public class MainMenuController implements Initializable {
         url = "precipitation.fxml";
         Main.showScene(event, url);
     }
+    
+    // get current temperature
+    private void showTemperature() {
+        System.out.println("Loading temperature");
+        // extract the current temp from array
+        String curTemp = Weather.currentTemperature();
+        Double tem = Double.parseDouble(curTemp);
+        
+        curTemp = (int)Math.round(tem) + "";
+      
+        // display this in the label
+        lblCurrentTemp.setText(curTemp + "°");
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        showTemperature();
     }  
     
 }

@@ -1,22 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.MainMenuController">
    <children>
-      <ImageView id="logo-im" fitHeight="109.0" fitWidth="251.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@res/logo.png" />
-         </image></ImageView>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: EEFFFC;">
+         <children>
+            <ImageView id="logo-im" fitHeight="109.0" fitWidth="251.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox alignment="CENTER_RIGHT" prefHeight="109.0" prefWidth="130.0">
+               <children>
+                  <Label fx:id="lblCurrentTemp" alignment="CENTER_RIGHT" prefHeight="76.0" prefWidth="123.0" style="-fx-text-fill: #acd4db;" stylesheets="@res/style.css" text="7°">
+                     <font>
+                        <Font size="58.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lblLocation" style="-fx-text-fill: #acd4db;" text="London, England">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
       <Button id="btn-temp" fx:id="btnTemp" mnemonicParsing="false" onAction="#btnTempHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="T E M P E R A T U R E" />
       <Button id="btn-crw" mnemonicParsing="false" onAction="#btnCrwHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="C R O S S W I N D S" />
       <Button id="btn-prec" mnemonicParsing="false" onAction="#btnPrecHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="P R E C I P I T A T I O N" />
       <Button id="btn-risk" mnemonicParsing="false" onAction="#btnRiskHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="R I S K S" />
       <Button id="btn-dayl" mnemonicParsing="false" onAction="#btnDaylHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="D A Y L I G H T" />
       <Button id="btn-vis" mnemonicParsing="false" onAction="#btnVisHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="V I S I B I L I T Y" />
-      <Button id="btn-close" fx:id="btnQuit" mnemonicParsing="false" onAction="#btnQuitHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="X" />
+      <Button id="btn-close" fx:id="btnQuit" mnemonicParsing="false" onAction="#btnQuitHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn">
+       <graphic>
+            <ImageView fitHeight="27.0" fitWidth="27.0" preserveRatio="true">
+                <Image url="@res/icon-close.png" />
+            </ImageView>
+        </graphic>
+      </Button>
    </children>
 </VBox>

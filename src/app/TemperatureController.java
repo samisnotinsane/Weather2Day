@@ -50,6 +50,7 @@ public class TemperatureController implements Initializable {
             public void handle(MouseEvent t) {
                 if (t.isSecondaryButtonDown()) {
                     // invoke main menu
+                    System.out.println("Right-click detected");
                     try {
                         Main.showMainMenu();
                     } catch (IOException e) {
@@ -66,6 +67,7 @@ public class TemperatureController implements Initializable {
     
     // displays the current time in 24hr format (HH:mm)
     public void showTime() {
+        System.out.println("Loading clock");
         //final DateFormat format = DateFormat.getInstance();
         final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
         final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
@@ -82,7 +84,7 @@ public class TemperatureController implements Initializable {
 
     // get current temperature
     private void showTemperature() {
-        
+        System.out.println("Loading temperature");
         // extract the current temp from array
         String curTemp = Weather.currentTemperature();
         Double tem = Double.parseDouble(curTemp);
@@ -90,6 +92,6 @@ public class TemperatureController implements Initializable {
         curTemp = (int)Math.round(tem) + "";
       
         // display this in the label
-        lblCurrentTemp.setText(curTemp);
+        lblCurrentTemp.setText(curTemp + "°");
     }
 }

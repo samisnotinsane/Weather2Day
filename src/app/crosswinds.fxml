@@ -1,43 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="crwPan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #43E5A7;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CrosswindsController">
+<AnchorPane id="crwPan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #43E5A7;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.CrosswindsController">
    <children>
-      <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
-      <Label layoutX="88.0" layoutY="44.0" styleClass="lbl" text="Crosswinds" />
-      <Label id="lbl-loc-cty" fx:id="lblWindDir" alignment="CENTER" layoutX="117.0" layoutY="359.0" prefHeight="17.0" prefWidth="17.0" styleClass="lbl" text="N" wrapText="true" />
-      <Label id="lbl-loc-con" fx:id="lblWindSpeed" alignment="CENTER" layoutX="102.0" layoutY="413.0" prefHeight="17.0" prefWidth="17.0" styleClass="lbl" text="0" wrapText="true" />
-      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@res/gps-on.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="imgCrw" fitHeight="176.0" fitWidth="171.0" layoutX="40.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@res/crosswinds.png" />
-         </image></ImageView>
-      <Label layoutX="118.0" layoutY="413.0" styleClass="lbl" text="km/h" />
-      <ImageView fx:id="imgWindDirection" fitHeight="35.0" fitWidth="31.0" layoutX="110.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="lblTemperature" layoutX="202.0" layoutY="33.0" styleClass="lbl" text="7" />
-      <Label alignment="CENTER" layoutX="211.0" layoutY="29.0" styleClass="lbl" text="o">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="214.0" layoutY="38.0" styleClass="lbl" text="c">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="220.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@res/home.png" />
-         </image>
-      </ImageView>
+      <HBox alignment="CENTER" layoutX="-4.0" layoutY="153.0" prefHeight="130.0" prefWidth="257.0">
+         <children>
+            <ImageView fx:id="imgCrw" fitHeight="144.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/wind.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="-3.0" layoutY="336.0" prefHeight="72.0" prefWidth="257.0">
+         <children>
+            <Label id="lbl-loc-cty" fx:id="lblWindDir" alignment="CENTER" prefHeight="17.0" prefWidth="17.0" styleClass="lbl" text="N" wrapText="true" />
+            <ImageView fx:id="imgWindDirection" fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/north-arrow.png" />
+               </image></ImageView>
+            <Label id="lbl-loc-con" fx:id="lblWindSpeed" alignment="CENTER" prefHeight="17.0" prefWidth="137.0" styleClass="lbl" text="0 km/h" wrapText="true" />
+         </children>
+      </VBox>
+      <HBox alignment="BOTTOM_RIGHT" layoutY="408.0" prefHeight="42.0" prefWidth="250.0" style="-fx-background-color: transparent;">
+         <children>
+           
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: transparent;">
+                <graphic>
+                    <ImageView fitHeight="27.0" fitWidth="27.0" preserveRatio="true">
+                          <Image url="@res/home.png" />
+                      </ImageView>
+                </graphic>
+                 
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutY="61.0" prefHeight="17.0" prefWidth="250.0">
+         <children>
+            <Label styleClass="lbl" text="Crosswinds" />
+         </children>
+      </HBox>
+      <HBox layoutX="4.0" layoutY="4.0" prefHeight="17.0" prefWidth="241.0">
+         <children>
+            <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/gps-on.png" />
+               </image>
+            </ImageView>
+            <Separator opacity="0.0" prefHeight="2.0" prefWidth="186.0" />
+            <Label fx:id="lblCurrentTime" styleClass="lbl" text="00:00" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" layoutX="4.0" layoutY="20.0" prefHeight="17.0" prefWidth="241.0">
+         <children>
+            <Label fx:id="lblTemperature" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="41.0" styleClass="lbl" text="7°" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

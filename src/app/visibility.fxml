@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="prec-pan" fx:id="crwPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #29E5DD;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.VisibilityController">
@@ -17,7 +20,7 @@
       </ImageView>
       <ImageView fx:id="imgCrw" fitHeight="155.0" fitWidth="194.0" layoutX="48.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/vis.png" />
+            <Image url="@res/visibility.png" />
          </image></ImageView>
       <Label fx:id="lblTemperature" layoutX="202.0" layoutY="33.0" styleClass="lbl" text="7" />
       <Label alignment="CENTER" layoutX="211.0" layoutY="29.0" styleClass="lbl" text="o">
@@ -31,15 +34,33 @@
          </font>
       </Label>
       <Label id="lbl-loc-cty" fx:id="lblWindDir1" alignment="CENTER" layoutX="77.0" layoutY="50.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="Visibility" wrapText="true" />
-      <Label id="lbl-loc-cty" fx:id="lblWindDir2" alignment="CENTER" layoutX="77.0" layoutY="332.0" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="0.00 km" wrapText="true">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="111.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@res/cross.png" />
-         </image>
-      </ImageView>
+      <HBox alignment="BOTTOM_RIGHT" layoutX="-2.0" layoutY="405.0" prefHeight="46.0" prefWidth="250.0">
+         <children>
+            <Button fx:id="btnHome" mnemonicParsing="false" onAction="#goHome" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="27.0" preserveRatio="true">
+                     <image>
+                        <Image url="@res/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="-7.0" layoutY="320.0" prefHeight="87.0" prefWidth="261.0">
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/cross.png" />
+               </image>
+            </ImageView>
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="6.0" prefWidth="7.0" />
+            <Label id="lbl-loc-cty" fx:id="lblWindDir2" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="0.00 km" wrapText="true">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

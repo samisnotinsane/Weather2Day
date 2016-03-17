@@ -26,7 +26,7 @@
 }
 
 #btn-risk {
--fx-background-color: #FF6243;
+-fx-background-color: #E5693E;
 }
 
 #btn-dayl {
@@ -47,6 +47,10 @@
 
 #crw-pan {
 -fx-background-color: #43E5A7;
+}
+
+#btn-close {
+ -fx-background-color: #354029;   
 }
 
 #prec-pan {

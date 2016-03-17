@@ -36,9 +36,9 @@ public class PrecipitationController implements Initializable {
     @FXML
     public Label lblCurrentTime;
     @FXML
-    public Label lblCurrentConditions; // i.e. rain, snow, etc.
+    public Label lblCurrentCondition; // i.e. rain, snow, etc.
     @FXML
-    public Label lblPrecipLevels; // i.e. 30mm
+    public Label lblPrecipLevel; // i.e. 30mm
     @FXML
     public Label lblCurrentTemp;
     @FXML
@@ -70,6 +70,7 @@ public class PrecipitationController implements Initializable {
     
     // displays the current time in 24hr format (HH:mm)
     public void showTime() {
+        System.out.println("Loading clock");
         //final DateFormat format = DateFormat.getInstance();
         final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
         final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
@@ -84,8 +85,12 @@ public class PrecipitationController implements Initializable {
         timeline.play();
     } // END showTime
     
+    public void goHome() throws IOException{
+       Main.showMainMenu();
+    }
+    
     private void showTemperature() {
-        
+        System.out.println("Loading temperature");
         // extract the current temp from array
         String curTemp = Weather.currentTemperature();
         Double tem = Double.parseDouble(curTemp);
@@ -93,22 +98,22 @@ public class PrecipitationController implements Initializable {
         curTemp = (int)Math.round(tem) + "";
       
         // display this in the label
-        lblCurrentTemp.setText(curTemp);
+        lblCurrentTemp.setText(curTemp + "°");
     }
     
     public void showPrecip() {
+        System.out.println("Loading precipication level");
         //Weather.currently();
         String precip = Weather.precipIntensity();
         // display this in the label
-        lblPrecipLevels.setText(precip + " mm/hr");
+        lblPrecipLevel.setText(precip + " mm/hr");
     }
     
     public void showConditions() {
+        System.out.println("Loading current conditions");
         String cn = Weather.currentSummary();
         cn = cn.replace("\"", "");
-        //cn = cn.substring(0, cn.length());
-        System.out.println("showConditions: "+cn);
-        lblCurrentConditions.setText(cn);
+        lblCurrentCondition.setText(cn);
     }
     
 }

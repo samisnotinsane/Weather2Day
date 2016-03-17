@@ -35,10 +35,13 @@ public class CrosswindsController implements Initializable {
     @FXML
     public Label lblCurrentTime;
     @FXML
+    public Label lblTemperature;
+    @FXML
     public AnchorPane crwPan = new AnchorPane();
 
     // displays the current time in 24hr format (HH:mm)
     public void showTime() {
+        System.out.println("Loading clock");
         //final DateFormat format = DateFormat.getInstance();
         final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
         final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
@@ -52,17 +55,35 @@ public class CrosswindsController implements Initializable {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
+    
+    // get current temperature
+    private void showTemperature() {
+        System.out.println("Loading temperature");
+        // extract the current temp from array
+        String curTemp = Weather.currentTemperature();
+        Double tem = Double.parseDouble(curTemp);
+        
+        curTemp = (int)Math.round(tem) + "";
+      
+        // display this in the label
+        lblTemperature.setText(curTemp + "°");
+    }
+    
+    public void goHome() throws IOException{
+       Main.showMainMenu();
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showTime();
+        showTemperature();
+        
         System.out.println();
         // detects whether mouse is being right-clicked
         // used for invoking the main menu
         crwPan.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent t) {
-                System.out.println("Yo");
                 if (t.isSecondaryButtonDown()) {
                     // invoke main menu
                     try {
