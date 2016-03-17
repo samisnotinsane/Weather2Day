@@ -44,7 +44,7 @@ public class Weather {
         fio = new ForecastIO(apiKey);                  //instantiate the class with the API key. 
         fio.setUnits(ForecastIO.UNITS_SI);             //sets the units as SI - optional
         fio.setExcludeURL("hourly,minutely");          //excluded the minutely and hourly reports from the reply
-        fio.getForecast("38.7252993", "-9.1500364");   // location unknown
+        fio.getForecast("51.5072", "0.1275");   // location unknown
     }
     
     // returns weather data matching current conditions

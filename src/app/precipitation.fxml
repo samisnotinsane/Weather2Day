@@ -28,7 +28,7 @@
             <Font size="9.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgConditions" fitHeight="277.0" fitWidth="224.0" layoutX="13.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgConditions" fitHeight="277.0" fitWidth="224.0" layoutX="13.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="lblCurrentConditions" alignment="CENTER" layoutX="19.0" layoutY="369.0" prefHeight="17.0" prefWidth="212.0" styleClass="lbl" text="Rain" />
    </children>
   

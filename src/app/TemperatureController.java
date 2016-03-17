@@ -60,6 +60,10 @@ public class TemperatureController implements Initializable {
         });
     } // END initialize
     
+    public void goHome() throws IOException{
+       Main.showMainMenu();
+    }
+    
     // displays the current time in 24hr format (HH:mm)
     public void showTime() {
         //final DateFormat format = DateFormat.getInstance();

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.MainMenuController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.MainMenuController">
    <children>
-      <ImageView id="logo-im" fitHeight="109.0" fitWidth="251.0" opacity="0.46" pickOnBounds="true" />
+      <ImageView id="logo-im" fitHeight="109.0" fitWidth="251.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/logo.png" />
+         </image></ImageView>
       <Button id="btn-temp" fx:id="btnTemp" mnemonicParsing="false" onAction="#btnTempHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="T E M P E R A T U R E" />
       <Button id="btn-crw" mnemonicParsing="false" onAction="#btnCrwHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="C R O S S W I N D S" />
       <Button id="btn-prec" mnemonicParsing="false" onAction="#btnPrecHandler" prefHeight="50.0" prefWidth="250.0" styleClass="btn" text="P R E C I P I T A T I O N" />
