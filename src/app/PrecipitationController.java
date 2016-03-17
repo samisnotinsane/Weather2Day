@@ -33,30 +33,22 @@ public class PrecipitationController implements Initializable {
     /**
      * Initializes the controller class.
      */
-   @FXML
+    @FXML
     public Label lblCurrentTime;
     @FXML
+    public Label lblCurrentConditions; // i.e. rain, snow, etc.
+    @FXML
+    public Label lblPrecipLevels; // i.e. 30mm
+    @FXML
+    public Label lblCurrentTemp;
+    @FXML
     public AnchorPane precPane = new AnchorPane();
-
-    // displays the current time in 24hr format (HH:mm)
-    public void showTime() {
-        //final DateFormat format = DateFormat.getInstance();
-        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
-        final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                final Calendar cal = Calendar.getInstance();
-
-                lblCurrentTime.setText(simpleDateFormat.format(cal.getTime()));
-            }
-        }));
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showTime();
+        showTemperature();
+        showPrecip();
 
         // detects whether mouse is being right-clicked
         // used for invoking the main menu
@@ -73,6 +65,49 @@ public class PrecipitationController implements Initializable {
                 }
             }
         });
+    } // END initialize
+    
+    // displays the current time in 24hr format (HH:mm)
+    public void showTime() {
+        //final DateFormat format = DateFormat.getInstance();
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+        final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                final Calendar cal = Calendar.getInstance();
+
+                lblCurrentTime.setText(simpleDateFormat.format(cal.getTime()));
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    } // END showTime
+    
+    private void showTemperature() {
+        
+        // extract the current temp from array
+        String curTemp = Weather.currentTemperature();
+        Double tem = Double.parseDouble(curTemp);
+        
+        curTemp = (int)Math.round(tem) + "";
+      
+        // display this in the label
+        lblCurrentTemp.setText(curTemp);
+    }
+    
+    public void showPrecip() {
+        Weather.currently();
+        String precip = Weather.precipIntensity();
+        //Double tem = Double.parseDouble(precip);
+        
+        //precip = (int)Math.round(tem) + "";
+      
+        // display this in the label
+        lblPrecipLevels.setText(precip + " mm/hr");
+    }
+    
+    public void showConditions() {
+        
     }
     
 }

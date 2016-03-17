@@ -34,27 +34,14 @@ public class TemperatureController implements Initializable {
     @FXML
     public Label lblCurrentTime;
     @FXML
+    public Label lblCurrentTemp;
+    @FXML
     public AnchorPane tempPan = new AnchorPane();
-
-    // displays the current time in 24hr format (HH:mm)
-    public void showTime() {
-        //final DateFormat format = DateFormat.getInstance();
-        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
-        final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                final Calendar cal = Calendar.getInstance();
-
-                lblCurrentTime.setText(simpleDateFormat.format(cal.getTime()));
-            }
-        }));
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-    }
-
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showTime();
+        showTemperature();
 
         // detects whether mouse is being right-clicked
         // used for invoking the main menu
@@ -71,5 +58,34 @@ public class TemperatureController implements Initializable {
                 }
             }
         });
+    } // END initialize
+    
+    // displays the current time in 24hr format (HH:mm)
+    public void showTime() {
+        //final DateFormat format = DateFormat.getInstance();
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+        final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                final Calendar cal = Calendar.getInstance();
+
+                lblCurrentTime.setText(simpleDateFormat.format(cal.getTime()));
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    } // END showTime
+
+    // get current temperature
+    private void showTemperature() {
+        
+        // extract the current temp from array
+        String curTemp = Weather.currentTemperature();
+        Double tem = Double.parseDouble(curTemp);
+        
+        curTemp = (int)Math.round(tem) + "";
+      
+        // display this in the label
+        lblCurrentTemp.setText(curTemp);
     }
 }

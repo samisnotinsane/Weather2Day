@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,7 +9,7 @@
    <children>
       <Label fx:id="lblCurrentTime" layoutX="200.0" layoutY="14.0" styleClass="lbl" text="00:00" />
       <Label layoutX="83.0" layoutY="44.0" styleClass="lbl" text="Temperature" />
-      <Label id="temp-val" fx:id="lblCurrentTemp" layoutX="94.0" layoutY="168.0" prefHeight="33.0" prefWidth="21.0" styleClass="lbl" text="7" />
+      <Label id="temp-val" fx:id="lblCurrentTemp" alignment="CENTER_RIGHT" layoutX="1.0" layoutY="168.0" prefHeight="114.0" prefWidth="147.0" styleClass="lbl" text="7" />
       <Label layoutX="149.0" layoutY="175.0" styleClass="lbl" text="o" />
       <Label layoutX="149.0" layoutY="247.0" styleClass="lbl" text="c" />
       <Label id="lbl-loc-cty" fx:id="lblCurrentCity" layoutX="102.0" layoutY="389.0" styleClass="lbl" text="London" wrapText="true" />
