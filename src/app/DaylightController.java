@@ -40,6 +40,7 @@ public class DaylightController implements Initializable {
         showTime();
         showTemperature();
         showDawnTime();
+        showDuskTime();
     }    
     
     // displays the current time in 24hr format (HH:mm)
@@ -81,8 +82,22 @@ public class DaylightController implements Initializable {
         String dawnT = "";
         try {
             dawnT = Weather.getSunriseTime();
+            dawnT = dawnT.substring(0, dawnT.length() - 3);
             System.out.print("[OK!]\n");
             lblDawnTime.setText(dawnT);
+        } catch (Exception e) {
+            System.out.println("[FAIL!]\n");
+        }
+    }
+    
+    private void showDuskTime() {
+        System.out.print("Loading sunsetTime... ");
+        String duskT = "";
+        try {
+            duskT = Weather.getSunsetTime();
+            duskT = duskT.substring(0, duskT.length() - 3);
+            System.out.print("[OK!]\n");
+            lblDuskTime.setText(duskT);
         } catch (Exception e) {
             System.out.println("[FAIL!]\n");
         }
