@@ -91,6 +91,7 @@ public class MainMenuController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
+            System.out.println("Initialising. This may take some time... \n");
             if(curTemp == 0.0) {
                 showTemperature();
             }

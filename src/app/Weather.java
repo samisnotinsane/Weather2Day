@@ -21,6 +21,7 @@ public class Weather {
     
     private static ForecastIO fio;
     private static String apiKey = "a40d79b7f2233f02a693186d335b8f02";
+    public static Double curTemp = 0.0;
     
     public static void main(String[] args) {
         System.out.println("Calling initialise()");
@@ -214,6 +215,13 @@ public class Weather {
           p = true;  
         } 
         return p;
+    }
+    
+    static Double getVisibility() {
+        initialise();
+        FIOCurrently currently = new FIOCurrently(fio);
+        Double visLevel = currently.get().visibility();
+        return visLevel;
     }
     
 }

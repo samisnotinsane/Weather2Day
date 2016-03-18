@@ -21,7 +21,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="41.0" prefWidth="237.0">
                <children>
-                  <Label id="lbl-loc-cty" fx:id="lblSafetyInfo" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="Safe" wrapText="true">
+                  <Label id="lbl-loc-cty" fx:id="lblSafetyInfo" alignment="CENTER" prefHeight="29.0" prefWidth="120.0" styleClass="lbl" text="Safe" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -29,7 +29,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ImageView fitHeight="29.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgSafetyIcon" fitHeight="29.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@res/tick.png" />
                      </image>
@@ -37,7 +37,7 @@
                </children>
             </HBox>
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="6.0" prefWidth="7.0" />
-            <Label id="lbl-loc-cty" fx:id="lblWindDir" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="0.00 km" wrapText="true">
+            <Label id="lbl-loc-cty" fx:id="lblVisibilityDistance" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="0.00 km" wrapText="true">
                <font>
                   <Font size="24.0" />
                </font>

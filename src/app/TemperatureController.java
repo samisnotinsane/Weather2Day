@@ -45,20 +45,20 @@ public class TemperatureController implements Initializable {
 
         // detects whether mouse is being right-clicked
         // used for invoking the main menu
-        tempPan.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent t) {
-                if (t.isSecondaryButtonDown()) {
-                    // invoke main menu
-                    System.out.println("Right-click detected");
-                    try {
-                        Main.showMainMenu();
-                    } catch (IOException e) {
-                        System.out.println("An I/O exception occurred!");
-                    }
-                }
-            }
-        });
+//        tempPan.setOnMousePressed(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent t) {
+//                if (t.isSecondaryButtonDown()) {
+//                    // invoke main menu
+//                    System.out.println("Right-click detected");
+//                    try {
+//                        Main.showMainMenu();
+//                    } catch (IOException e) {
+//                        System.out.println("An I/O exception occurred!");
+//                    }
+//                }
+//            }
+//        });
     } // END initialize
     
     public void goHome() throws IOException{
