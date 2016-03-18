@@ -5,6 +5,7 @@
  */
 package app;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -18,6 +19,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 /**
@@ -27,19 +30,25 @@ import javafx.util.Duration;
  */
 public class RiskController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @FXML
     public Label lblCurrentTemp;
     @FXML
     public Label lblCurrentTime;
     @FXML
     public Label lblRiskType;
+    @FXML
+    public ImageView imgConditions;
+    public ImageView imgRisk;
+    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         showTime();
         showTemperature();
+        showRisk();
     }    
     
     // displays the current time in 24hr format (HH:mm)
@@ -66,10 +75,10 @@ public class RiskController implements Initializable {
         Double curTemp = 0.0;
         try {
             curTemp = Weather.getCurrentTemperature();
-            System.out.print("[OK!]");
+            System.out.print("[OK!]\n");
             //System.out.print("->"+curTemp);
         } catch (Exception e) {
-            System.out.println("[FAIL!]");
+            System.out.println("[FAIL!]\n");
         }
 //        Double tem = Double.parseDouble(curTemp);
         int temp = (int)Math.round(curTemp);
@@ -80,4 +89,30 @@ public class RiskController implements Initializable {
      public void goHome() throws IOException{
        Main.showMainMenu();
     }
+     
+     public void showRisk() {
+         try {
+            System.out.print("Loading risk data... ");
+            boolean rsk = Weather.isPrecip(); // returns false if no risk
+            System.out.print("[OK!]\n");
+            
+            if(!rsk) { // 
+                // safe
+                File file = new File("src/app/res/tick.png");
+                Image imgSafe = new Image(file.toURI().toString());
+                imgConditions.setImage(imgSafe);
+                System.out.println("Setting safe image");
+                lblRiskType.setText("Optimum conditions");
+            } else {
+                // set off safety signals
+                File file = new File("src/app/res/close.png");
+                Image imgRisk = new Image(file.toURI().toString());
+                imgConditions.setImage(imgRisk);
+                System.out.println("Setting unsafe image");
+                lblRiskType.setText("Hazardous conditions!");
+            }
+         } catch (Exception e) {
+             System.out.println("---[FAIL!]\n");
+         }
+     }
 }

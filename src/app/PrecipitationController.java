@@ -117,7 +117,7 @@ public class PrecipitationController implements Initializable {
             System.out.print("[FAIL!]\n");
         }
         // display this in the label
-        lblPrecipLevel.setText(precip + " mm/hr");
+        lblPrecipLevel.setText(precip + " inches/hr");
     }
     
     public void showConditions() {
