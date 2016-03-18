@@ -38,6 +38,7 @@ public class CrosswindsController implements Initializable {
     @FXML
     public Label lblTemperature;
     public Label lblWindDir;
+    public Label lblWindSpeed;
     @FXML
     public AnchorPane crwPan = new AnchorPane();
     @FXML
@@ -86,9 +87,9 @@ public class CrosswindsController implements Initializable {
     public void getBearing() {
         Double wb = 0.0;
         try {
+            System.out.print("Loading wind bearing... ");
             wb = Weather.getWindBearing();
-            System.out.println("Wind bearing:"+wb);
-            
+            System.out.print("[OK!]\n");
             if(wb==0 || wb==360) {
                 lblWindDir.setText("N");
             } else if(wb<90 && wb>0) {
@@ -111,10 +112,22 @@ public class CrosswindsController implements Initializable {
             }
             
         } catch(Exception e) {
-            System.out.println("Wind bearing error");
+            System.out.println("[FAIL!]\n");
         }
-        
-        
+
+    } // END getBearing
+    
+    public void getWindSpeed() {
+        Double ws = 0.0;
+        try {
+            System.out.print("Loading wind speed... ");
+            ws = Weather.getWindSpeed();
+            System.out.print("[OK!]\n");
+            String wss = ws.toString()+"";
+            lblWindSpeed.setText(wss + " mph");
+        } catch(Exception e) {
+            System.out.println("[FAIL!]\n");
+        }
     }
 
     @Override
@@ -122,6 +135,7 @@ public class CrosswindsController implements Initializable {
         showTime();
         showTemperature();
         getBearing();
+        getWindSpeed();
         
         // load crosswind data...
         

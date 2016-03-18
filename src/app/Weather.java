@@ -196,6 +196,13 @@ public class Weather {
         Double b = currently.get().windBearing();
         return b;
     }
+
+    static Double getWindSpeed() {
+        initialise();
+        FIOCurrently currently = new FIOCurrently(fio);
+        Double b = currently.get().windSpeed();
+        return b;
+    }
     
 }
 
