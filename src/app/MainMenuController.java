@@ -32,6 +32,7 @@ public class MainMenuController implements Initializable {
         System.exit(0);
     }
     private String url;
+    private Double curTemp = 0.0;
 
     // opens temperature screen
     public void btnTempHandler(ActionEvent event) throws IOException {
@@ -73,7 +74,7 @@ public class MainMenuController implements Initializable {
     private void showTemperature() {
         System.out.print("Loading temperature... ");
         // extract the current temp from array
-        Double curTemp = 0.0;
+        
         try {
             curTemp = Weather.getCurrentTemperature();
             System.out.print("[OK!]");
@@ -90,8 +91,9 @@ public class MainMenuController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-        showTemperature();
-        
+            if(curTemp == 0.0) {
+                showTemperature();
+            }
         } catch (Exception e) {
             System.out.println("Unable to load weather data. Check internet connection.");
         }
