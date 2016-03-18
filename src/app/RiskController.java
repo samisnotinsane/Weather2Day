@@ -98,21 +98,23 @@ public class RiskController implements Initializable {
             
             if(!rsk) { // 
                 // safe
+                System.out.print("Setting image as safe... ");
                 File file = new File("src/app/res/tick.png");
                 Image imgSafe = new Image(file.toURI().toString());
                 imgConditions.setImage(imgSafe);
-                System.out.println("Setting safe image");
                 lblRiskType.setText("Optimum conditions");
+                System.out.print("[OK!]\n");
             } else {
                 // set off safety signals
+                System.out.print("Setting image as unsafe... ");
                 File file = new File("src/app/res/close.png");
                 Image imgRisk = new Image(file.toURI().toString());
                 imgConditions.setImage(imgRisk);
-                System.out.println("Setting unsafe image");
                 lblRiskType.setText("Hazardous conditions!");
+                System.out.print("[OK!]\n");
             }
          } catch (Exception e) {
-             System.out.println("---[FAIL!]\n");
+             System.out.println("[FAIL!]\n");
          }
      }
 }

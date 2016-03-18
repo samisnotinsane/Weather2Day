@@ -213,7 +213,6 @@ public class Weather {
         if( pr.equals("rain") || pr.equals("snow") || pr.equals("sleet") || pr.equals("hail")  ) {
           p = true;  
         } 
-        System.out.print("precipitation="+p);
         return p;
     }
     

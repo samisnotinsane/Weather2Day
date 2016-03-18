@@ -36,7 +36,7 @@ public class Main extends Application {
         window.setTitle("Weather2Day");
         window.setScene(new Scene(root));
         window.show();
-        System.out.println("showing main menu");
+        System.out.println("\n\nshowing main menu");
 
     }
 
@@ -46,7 +46,7 @@ public class Main extends Application {
         // now place scene on stage
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        System.out.println("showing " + url);
+        System.out.println("\n\nshowing " + url);
         stage.show();
 
     }
