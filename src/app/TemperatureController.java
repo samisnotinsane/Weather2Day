@@ -84,15 +84,15 @@ public class TemperatureController implements Initializable {
 
     // get current temperature
     private void showTemperature() {
-        System.out.print("Loading temperature... ");
+        System.out.print("Loading temperature...");
         // extract the current temp from array
         Double curTemp = 0.0;
         try {
             curTemp = Weather.getCurrentTemperature();
-            System.out.print("[OK!]");
+            System.out.print("[OK!]\n");
             //System.out.print("->"+curTemp);
         } catch (Exception e) {
-            System.out.println("[FAIL!]");
+            System.out.println("[FAIL!]\n");
         }
 //        Double tem = Double.parseDouble(curTemp);
         int temp = (int)Math.round(curTemp);

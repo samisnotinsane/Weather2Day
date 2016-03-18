@@ -21,7 +21,7 @@
                </image>
             </ImageView>
             <Label id="lbl-loc-cty" fx:id="lblWindDir3" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="Dawn" wrapText="true" />
-            <Label id="lbl-loc-cty" fx:id="lblWindDir21" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="00:00" wrapText="true">
+            <Label id="lbl-loc-cty" fx:id="lblDawnTime" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="00:00" wrapText="true">
                <font>
                   <Font size="24.0" />
                </font>
@@ -36,7 +36,7 @@
                </image>
             </ImageView>
             <Label id="lbl-loc-cty" fx:id="lblWindDir" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="Dusk" wrapText="true" />
-            <Label id="lbl-loc-cty" fx:id="lblWindDir2" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="00:00" wrapText="true">
+            <Label id="lbl-loc-cty" fx:id="lblDuskTime" alignment="CENTER" prefHeight="17.0" prefWidth="98.0" styleClass="lbl" text="00:00" wrapText="true">
                <font>
                   <Font size="24.0" />
                </font>

@@ -172,5 +172,23 @@ public class Weather {
         return con;
     }
     
+    public static String getSunriseTime() {
+        initialise();
+        FIODaily daily = new FIODaily(fio);
+        if(daily.days()<0)
+            System.out.println("-");
+        String time = daily.getDay(0).sunriseTime();
+        return time;
+    }
+    
+    public static String getSunsetTime() {
+        initialise();
+        FIODaily daily = new FIODaily(fio);
+        if(daily.days()<0)
+            System.out.println("-");
+        String time = daily.getDay(0).sunsetTime();
+        return time;
+    }
+    
 }
 
