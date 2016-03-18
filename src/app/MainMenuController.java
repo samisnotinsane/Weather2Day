@@ -29,6 +29,7 @@ public class MainMenuController implements Initializable {
     
      @FXML
     public void btnQuitHandler() {
+        System.out.println("\n\nExiting...");
         System.exit(0);
     }
     private String url;

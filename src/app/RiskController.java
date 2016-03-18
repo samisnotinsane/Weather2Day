@@ -5,6 +5,7 @@
  */
 package app;
 
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -22,6 +23,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+import java.lang.Object;
+import javafx.fxml.FXMLLoader;
 
 /**
  * FXML Controller class
@@ -99,16 +102,16 @@ public class RiskController implements Initializable {
             if(!rsk) { // 
                 // safe
                 System.out.print("Setting image as safe... ");
-                File file = new File("src/app/res/tick.png");
-                Image imgSafe = new Image(file.toURI().toString());
+                File file = new File("/app/res/tick.png");
+                Image imgSafe = new Image(getClass().getResource("/app/res/tick.png").toString());
                 imgConditions.setImage(imgSafe);
                 lblRiskType.setText("Optimum conditions");
                 System.out.print("[OK!]\n");
             } else {
                 // set off safety signals
                 System.out.print("Setting image as unsafe... ");
-                File file = new File("src/app/res/close.png");
-                Image imgRisk = new Image(file.toURI().toString());
+                File file = new File("/app/res/close.png");
+                Image imgRisk = new Image(getClass().getResource("/app/res/close.png").toString());
                 imgConditions.setImage(imgRisk);
                 lblRiskType.setText("Hazardous conditions!");
                 System.out.print("[OK!]\n");

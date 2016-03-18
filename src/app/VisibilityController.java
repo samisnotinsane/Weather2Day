@@ -99,16 +99,16 @@ public class VisibilityController implements Initializable {
                 // unsafe vis. condition, raise alert
                 lblSafetyInfo.setText("Danger");
                 System.out.print("Setting image as safe... ");
-                File file = new File("src/app/res/close.png");
-                Image imgUnsafe = new Image(file.toURI().toString());
+//                File file = new File("/src/app/res/close.png");
+                Image imgUnsafe = new Image(getClass().getResource("/app/res/close.png").toString());
                 imgSafetyIcon.setImage(imgUnsafe);
                 System.out.print("[OK!]\n");
             } else {
                 // safe conditions
                 lblSafetyInfo.setText("Safe");
                 System.out.print("Setting image as safe... ");
-                File file = new File("src/app/res/tick.png");
-                Image imgSafe = new Image(file.toURI().toString());
+//                File file = new File("/src/app/res/tick.png");
+                Image imgSafe = new Image(getClass().getResource("/app/res/tick.png").toString());
                 imgSafetyIcon.setImage(imgSafe);
                 System.out.print("[OK!]\n");
             }
