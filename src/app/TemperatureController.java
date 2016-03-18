@@ -84,13 +84,17 @@ public class TemperatureController implements Initializable {
 
     // get current temperature
     private void showTemperature() {
-        System.out.println("Loading temperature");
+        System.out.print("Loading temperature... ");
         // extract the current temp from array
-        String curTemp = Weather.currentTemperature();
+        String curTemp = "0";
+        try {
+            curTemp = Weather.currentTemperature();
+            System.out.print("[OK!]");
+        } catch (Exception e) {
+            System.out.println("[FAIL!]");
+        }
         Double tem = Double.parseDouble(curTemp);
-        
         curTemp = (int)Math.round(tem) + "";
-      
         // display this in the label
         lblCurrentTemp.setText(curTemp + "°");
     }

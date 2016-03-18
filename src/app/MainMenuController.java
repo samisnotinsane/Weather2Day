@@ -71,11 +71,16 @@ public class MainMenuController implements Initializable {
     
     // get current temperature
     private void showTemperature() {
-        System.out.println("Loading temperature");
+        System.out.print("Loading temperature...");
         // extract the current temp from array
-        String curTemp = Weather.currentTemperature();
+        String curTemp = "";
+        try {
+        curTemp = Weather.currentTemperature();
+        System.out.println("[OK!]");
+        } catch(Exception e) {
+            System.out.println("[FAIL!]");
+        }
         Double tem = Double.parseDouble(curTemp);
-        
         curTemp = (int)Math.round(tem) + "";
       
         // display this in the label
@@ -84,7 +89,12 @@ public class MainMenuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
         showTemperature();
+        
+        } catch (Exception e) {
+            System.out.println("Unable to load weather data. Check internet connection.");
+        }
     }  
     
 }

@@ -5,6 +5,7 @@
  */
 package app;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -23,5 +24,9 @@ public class VisibilityController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    public void goHome() throws IOException{
+       Main.showMainMenu();
+    }
     
 }

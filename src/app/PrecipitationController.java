@@ -89,29 +89,45 @@ public class PrecipitationController implements Initializable {
        Main.showMainMenu();
     }
     
+   // get current temperature
     private void showTemperature() {
-        System.out.println("Loading temperature");
+        System.out.print("Loading temperature... ");
         // extract the current temp from array
-        String curTemp = Weather.currentTemperature();
+        String curTemp = "0";
+        try {
+            curTemp = Weather.currentTemperature();
+            System.out.print("[OK!]");
+        } catch (Exception e) {
+            System.out.println("[FAIL!]");
+        }
         Double tem = Double.parseDouble(curTemp);
-        
         curTemp = (int)Math.round(tem) + "";
-      
         // display this in the label
         lblCurrentTemp.setText(curTemp + "°");
     }
     
     public void showPrecip() {
-        System.out.println("Loading precipication level");
-        //Weather.currently();
-        String precip = Weather.precipIntensity();
+        System.out.print("Loading precipication level...");
+        String precip = "0.00";
+        try {
+        precip = Weather.precipIntensity();
+        System.out.print("[OK!]\n");
+        } catch (Exception e) {
+            System.out.print("[FAIL!]\n");
+        }
         // display this in the label
         lblPrecipLevel.setText(precip + " mm/hr");
     }
     
     public void showConditions() {
-        System.out.println("Loading current conditions");
-        String cn = Weather.currentSummary();
+        System.out.print("\nLoading current conditions...");
+        String cn = "";
+        try {
+        cn = Weather.currentSummary();
+        System.out.print("[OK!]\n");
+        } catch (Exception e) {
+            System.out.print("[FAIL!]\n");
+        }
         cn = cn.replace("\"", "");
         lblCurrentCondition.setText(cn);
     }

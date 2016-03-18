@@ -38,12 +38,12 @@
             <Label id="lbl-loc-con" fx:id="lblCurrentCountry" styleClass="lbl" text="England" wrapText="true" />
          </children>
       </VBox>
-      <HBox alignment="BOTTOM_RIGHT" layoutY="393.0" prefHeight="57.0" prefWidth="250.0">
+      <HBox alignment="BOTTOM_CENTER" layoutY="393.0" prefHeight="57.0" prefWidth="250.0">
          <children>
             <Button fx:id="btnHome" mnemonicParsing="false" onAction="#goHome" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: transparent;">
                   <graphic>
                       <ImageView fitHeight="27.0" fitWidth="27.0" preserveRatio="true">
-                          <Image url="@res/home.png" />
+                          <Image url="@res/back.png" />
                       </ImageView>
                   </graphic>
             </Button>

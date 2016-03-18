@@ -23,7 +23,7 @@
             </ImageView>
             <VBox alignment="CENTER_RIGHT" prefHeight="109.0" prefWidth="130.0">
                <children>
-                  <Label fx:id="lblCurrentTemp" alignment="CENTER_RIGHT" prefHeight="76.0" prefWidth="123.0" style="-fx-text-fill: #acd4db;" stylesheets="@res/style.css" text="7°">
+                  <Label fx:id="lblCurrentTemp" alignment="CENTER_RIGHT" prefHeight="76.0" prefWidth="123.0" style="-fx-text-fill: #acd4db;" stylesheets="@res/style.css" text="-°">
                      <font>
                         <Font size="58.0" />
                      </font>
