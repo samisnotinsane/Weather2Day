@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="precPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #39B3E5;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.PrecipitationController">
    <children>
@@ -18,8 +19,14 @@
          </image></ImageView>
       <VBox alignment="CENTER" layoutX="-5.0" layoutY="353.0" prefHeight="56.0" prefWidth="261.0">
          <children>
-            <Label fx:id="lblCurrentCondition" alignment="CENTER" prefHeight="17.0" prefWidth="212.0" styleClass="lbl" text="Rain" />
-            <Label id="lbl-loc-cty" fx:id="lblPrecipLevel" alignment="CENTER" prefHeight="17.0" prefWidth="229.0" styleClass="lbl" text="22 mm/hr" wrapText="true" />
+            <Label fx:id="lblCurrentCondition" alignment="CENTER" prefHeight="17.0" prefWidth="212.0" styleClass="lbl" text="Rain">
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font></Label>
+            <Label id="lbl-loc-cty" fx:id="lblPrecipLevel" alignment="CENTER" prefHeight="17.0" prefWidth="229.0" styleClass="lbl" text="22 mm/hr" wrapText="true">
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font></Label>
          </children>
       </VBox>
       <HBox alignment="BOTTOM_CENTER" layoutY="404.0" prefHeight="46.0" prefWidth="250.0">
@@ -37,15 +44,21 @@
       </HBox>
       <HBox alignment="TOP_CENTER" layoutX="7.0" layoutY="42.0" prefHeight="17.0" prefWidth="236.0">
          <children>
-            <Label fx:id="lblTitle" styleClass="lbl" text="Precipitation" />
+            <Label fx:id="lblTitle" styleClass="lbl" text="Precipitation">
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font></Label>
          </children>
       </HBox>
       <HBox alignment="TOP_RIGHT" layoutX="4.0" layoutY="20.0" prefHeight="17.0" prefWidth="243.0">
          <children>
-            <Label fx:id="lblCurrentTemp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="37.0" styleClass="lbl" text="7°">
+            <Label fx:id="lblCurrentTemp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="37.0" styleClass="lbl" text="0°">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font>
             </Label>
          </children>
       </HBox>
@@ -61,6 +74,9 @@
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font>
             </Label>
          </children>
          <padding>

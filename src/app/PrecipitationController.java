@@ -5,6 +5,7 @@
  */
 package app;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -19,6 +20,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -43,13 +46,17 @@ public class PrecipitationController implements Initializable {
     public Label lblCurrentTemp;
     @FXML
     public AnchorPane precPane = new AnchorPane();
+    @FXML
+    public ImageView imgCurrentCondition;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showTime();
         showTemperature();
         showPrecip();
+        showIcon();
         showConditions();
+        
 
         // detects whether mouse is being right-clicked
         // used for invoking the main menu
@@ -131,6 +138,74 @@ public class PrecipitationController implements Initializable {
         }
         cn = cn.replace("\"", "");
         lblCurrentCondition.setText(cn);
+    }
+
+    private void showIcon() {
+        String[] imgPath = 
+        {"/app/res/clear-sunny.png", // sunny [0]
+         "/app/res/clear-night.png", // moon  [1]
+         "/app/res/cloud-rain.png",  // rainy cloud [2]
+         "/app/res/cloudy.png",      // cloud [3]
+         "/app/res/fog.png", // fog [4]
+         "/app/res/partly-cloudy.png",
+         "/app/res/partly-cloudy-night.png"}; // partly cloudy moon [6]
+        //File file = new File("/app/res/tick.png");
+        //Image imgSafe = new Image(getClass().getResource("/app/res/tick.png").toString());
+        //imgConditions.setImage(imgSafe);
+        
+        System.out.print("\nLoading weather icon... ");
+        String icon = "";
+        try {
+        icon = Weather.getIconType(); 
+        //System.out.println("Icon type="+icon);
+        System.out.print("[OK!]\n");
+        if(icon.equals("clear-day")) {
+            // set sunny icon
+            Image img = new Image(getClass().getResource(imgPath[0]).toString());
+            imgCurrentCondition.setImage(img);
+        } else if(icon.equals("clear-night")) {
+            // set moon icon
+            Image img = new Image(getClass().getResource(imgPath[1]).toString());
+            imgCurrentCondition.setImage(img);
+        } else if(icon.equals("rain")) {
+            // set rain icon
+            Image img = new Image(getClass().getResource(imgPath[2]).toString());
+            imgCurrentCondition.setImage(img);
+        } else if(icon.equals("snow")) {
+            // set snow icon
+            System.out.println("Icon not supported!");
+        } else if(icon.equals("sleet")) {
+            // set sleet icon
+            System.out.println("Icon not supported!");
+        } else if(icon.equals("wind")) {
+            // set windy icon
+            Image img = new Image(getClass().getResource(imgPath[0]).toString());
+            imgCurrentCondition.setImage(img);
+            
+        } else if(icon.equals("fog")) {
+            // set fog icon
+            Image img = new Image(getClass().getResource(imgPath[4]).toString());
+            imgCurrentCondition.setImage(img);
+        } else if(icon.equals("partly-cloudy-day")) {
+            // partly cloudy icon
+            Image img = new Image(getClass().getResource(imgPath[5]).toString());
+            imgCurrentCondition.setImage(img);
+        } else if(icon.equals("partly-cloudy-night")) {
+            Image img = new Image(getClass().getResource(imgPath[6]).toString());
+            imgCurrentCondition.setImage(img);
+        } else if(icon.equals("hail")) {
+            System.out.println("Icon not supported!");
+            
+        } else if(icon.equals("thunderstorm")) {
+            System.out.println("Icon not supported!");
+        } else {
+           System.out.print("\nNo weather icon found!"); 
+        }
+        } catch (Exception e) {
+            System.out.print("[FAIL!]\n");
+        }
+        icon = icon.replace("\"", "");
+//        imgCurrentCondition.setImage(icon);
     }
     
 }

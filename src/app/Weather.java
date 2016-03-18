@@ -224,5 +224,12 @@ public class Weather {
         return visLevel;
     }
     
+    static String getIconType() {
+        initialise();
+        FIOCurrently currently = new FIOCurrently(fio);
+        String type = currently.get().icon();
+        return type;
+    }
+    
 }
 

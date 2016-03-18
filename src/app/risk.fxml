@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="prec-pan" fx:id="crwPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #E5693E;" styleClass="pan" stylesheets="@res/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.RiskController">
    <children>
@@ -31,12 +32,18 @@
       </HBox>
       <HBox alignment="TOP_CENTER" layoutX="7.0" layoutY="40.0" prefHeight="17.0" prefWidth="236.0">
          <children>
-            <Label fx:id="lblTitle" styleClass="lbl" text="Risk" />
+            <Label fx:id="lblTitle" styleClass="lbl" text="Risk">
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font></Label>
          </children>
       </HBox>
       <HBox alignment="TOP_RIGHT" layoutX="1.0" layoutY="24.0" prefHeight="17.0" prefWidth="243.0">
          <children>
-            <Label fx:id="lblCurrentTemp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="40.0" styleClass="lbl" text="7°" />
+            <Label fx:id="lblCurrentTemp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="40.0" styleClass="lbl" text="7°">
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font></Label>
          </children>
          <padding>
             <Insets right="10.0" />
@@ -53,7 +60,10 @@
                </HBox.margin>
             </ImageView>
             <Separator opacity="0.0" prefHeight="8.0" prefWidth="180.0" />
-            <Label fx:id="lblCurrentTime" prefHeight="17.0" prefWidth="43.0" styleClass="lbl" text="00:00" />
+            <Label fx:id="lblCurrentTime" prefHeight="17.0" prefWidth="43.0" styleClass="lbl" text="00:00">
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font></Label>
          </children>
          <padding>
             <Insets right="5.0" top="2.0" />
@@ -61,7 +71,10 @@
       </HBox>
       <VBox alignment="CENTER" layoutX="-4.0" layoutY="347.0" prefHeight="56.0" prefWidth="261.0">
          <children>
-            <Label id="lbl-loc-cty" fx:id="lblRiskType" alignment="CENTER" prefHeight="17.0" prefWidth="215.0" styleClass="lbl" text="Conditions optimum" wrapText="true" />
+            <Label id="lbl-loc-cty" fx:id="lblRiskType" alignment="CENTER" prefHeight="17.0" prefWidth="215.0" styleClass="lbl" text="Conditions optimum" wrapText="true">
+               <font>
+                  <Font name="Avenir Light" size="13.0" />
+               </font></Label>
          </children>
       </VBox>
    </children>
