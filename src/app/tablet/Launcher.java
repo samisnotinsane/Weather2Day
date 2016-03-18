@@ -2,7 +2,7 @@
  * AUTHOR: Sameen Islam
  * QUEEN MARY UNIVERSITY OF LONDON - 2016
  */
-package app;
+package app.tablet;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,13 +44,21 @@ public class Launcher extends Application {
         return page;
     } // END replaceSceneContent
     
-     private void showLauncher() {
+     public void showLauncher() {
         try {
-            replaceSceneContent("launcher.fxml");
+            replaceSceneContent("Launcher.fxml");
         } catch (Exception ex) {
             Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
         }
     } // END showLauncher
+     
+     public void showMobile() {
+      try {
+            replaceSceneContent("MainMenu.fxml");
+        } catch (Exception ex) {
+            Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+     }
     
     @Override
     public void start(Stage primaryStage) throws Exception {
