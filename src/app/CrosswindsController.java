@@ -60,17 +60,18 @@ public class CrosswindsController implements Initializable {
     private void showTemperature() {
         System.out.print("Loading temperature... ");
         // extract the current temp from array
-        String curTemp = "0";
+        Double curTemp = 0.0;
         try {
-            curTemp = Weather.currentTemperature();
+            curTemp = Weather.getCurrentTemperature();
             System.out.print("[OK!]");
+            //System.out.print("->"+curTemp);
         } catch (Exception e) {
             System.out.println("[FAIL!]");
         }
-        Double tem = Double.parseDouble(curTemp);
-        curTemp = (int)Math.round(tem) + "";
+//        Double tem = Double.parseDouble(curTemp);
+        int temp = (int)Math.round(curTemp);
         // display this in the label
-        lblTemperature.setText(curTemp + "°");
+        lblTemperature.setText(temp + "°");
     }
     
     public void goHome() throws IOException{

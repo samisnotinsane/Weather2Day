@@ -136,14 +136,24 @@ public class Weather {
 //        return precip;
 //    }
 
+    // deprecated
     public static String currentTemperature() {
         initialise();
          // get current weather conditions
         FIOCurrently currently = new FIOCurrently(fio);
         String [] f  = currently.get().getFieldsArray();
         String temper = currently.get().getByKey(f[11]);
-        //System.out.println("Temperature: "+precip);
+        //System.out.println("Temperature: "+temper);
+        //System.out.println("Temperature: "+currently.get().temperature());
         return temper;
+    }
+    
+    // returns the current temperature
+    public static Double getCurrentTemperature() {
+        initialise();
+         // get current weather conditions
+        FIOCurrently currently = new FIOCurrently(fio);
+        return currently.get().temperature();   
     }
     
     public static String precipIntensity() {
