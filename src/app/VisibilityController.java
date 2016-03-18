@@ -47,7 +47,6 @@ public class VisibilityController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         showTime();
         showTemperature();
-        Weather.getVisibility();
         showSafety();
     }    
     
@@ -71,7 +70,7 @@ public class VisibilityController implements Initializable {
     // get current temperature
     private void showTemperature() {
         System.out.print("Loading temperature...");
-        // extract the current temp from array
+        // extract the current vis from array
         Double curTemp = 0.0;
         try {
             curTemp = Weather.getCurrentTemperature();
@@ -97,7 +96,6 @@ public class VisibilityController implements Initializable {
             lblVisibilityDistance.setText(visibilityDist+" mi");
             // determine if vis. level is unsafe
             if(visibilityDist<=safetyThreshold) {
-                System.out.println("visibilityDist<=safetyThreshold");
                 // unsafe vis. condition, raise alert
                 lblSafetyInfo.setText("Danger");
                 System.out.print("Setting image as safe... ");
@@ -105,7 +103,6 @@ public class VisibilityController implements Initializable {
                 Image imgUnsafe = new Image(file.toURI().toString());
                 imgSafetyIcon.setImage(imgUnsafe);
                 System.out.print("[OK!]\n");
-                
             } else {
                 // safe conditions
                 lblSafetyInfo.setText("Safe");
@@ -118,13 +115,10 @@ public class VisibilityController implements Initializable {
         } catch (Exception e) {
             System.out.println("[FAIL!]\n");
         }
-        int temp = (int)Math.round(visibilityDist);
+        int vis = (int)Math.round(visibilityDist);
         // display this in the label
-        lblCurrentTemp.setText(temp + "°");
+        lblVisibilityDistance.setText(vis + " mi");
     }
 
-    private void showVisibility() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

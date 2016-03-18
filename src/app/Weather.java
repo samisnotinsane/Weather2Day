@@ -23,23 +23,23 @@ public class Weather {
     private static String apiKey = "a40d79b7f2233f02a693186d335b8f02";
     public static Double curTemp = 0.0;
     
-    public static void main(String[] args) {
-        System.out.println("Calling initialise()");
-        initialise();        
-        
-        System.out.println("Calling currently()");
-        currently(); // current weather reports
-        
-        System.out.println("Calling minutely()");
-        minutely();
-        
-        System.out.println("Calling daily()");
-        daily();
-        
-        System.out.println("Calling alerts()");
-        alerts();
-        
-    } // END main
+//    public static void main(String[] args) {
+//        System.out.println("Calling initialise()");
+//        initialise();        
+//        
+//        System.out.println("Calling currently()");
+//        currently(); // current weather reports
+//        
+//        System.out.println("Calling minutely()");
+//        minutely();
+//        
+//        System.out.println("Calling daily()");
+//        daily();
+//        
+//        System.out.println("Calling alerts()");
+//        alerts();
+//        
+//    } // END main
     
     private static void initialise() {
         fio = new ForecastIO(apiKey);                  //instantiate the class with the API key. 
