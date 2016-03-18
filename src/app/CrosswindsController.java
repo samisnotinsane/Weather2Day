@@ -97,16 +97,22 @@ public class CrosswindsController implements Initializable {
                 imgWindDirection.setRotate(imgWindDirection.getRotate()+45);
             } else if(wb==90) {
                 lblWindDir.setText("E");
+                imgWindDirection.setRotate(imgWindDirection.getRotate()+90);
             } else if(wb>90 && wb<180) {
                 lblWindDir.setText("SE");
+                imgWindDirection.setRotate(imgWindDirection.getRotate()+135);
             } else if(wb==180) {
                 lblWindDir.setText("S");
+                imgWindDirection.setRotate(imgWindDirection.getRotate()+180);
             } else if(wb>180 && wb<270) {
                 lblWindDir.setText("SW");
+                imgWindDirection.setRotate(imgWindDirection.getRotate()+225);
             } else if(wb==270) {
                 lblWindDir.setText("W");
+                imgWindDirection.setRotate(imgWindDirection.getRotate()+270);
             } else if(wb>270 && wb<360) {
                 lblWindDir.setText("NW");
+                imgWindDirection.setRotate(imgWindDirection.getRotate()+315);
             } else {
                 lblWindDir.setText("-");
             }
