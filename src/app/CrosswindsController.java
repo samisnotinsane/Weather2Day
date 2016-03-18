@@ -21,6 +21,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.ResourceBundle;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -36,8 +37,11 @@ public class CrosswindsController implements Initializable {
     public Label lblCurrentTime;
     @FXML
     public Label lblTemperature;
+    public Label lblWindDir;
     @FXML
     public AnchorPane crwPan = new AnchorPane();
+    @FXML
+    public ImageView imgWindDirection;
 
     // displays the current time in 24hr format (HH:mm)
     public void showTime() {
@@ -63,10 +67,10 @@ public class CrosswindsController implements Initializable {
         Double curTemp = 0.0;
         try {
             curTemp = Weather.getCurrentTemperature();
-            System.out.print("[OK!]");
+            System.out.print("[OK!]\n");
             //System.out.print("->"+curTemp);
         } catch (Exception e) {
-            System.out.println("[FAIL!]");
+            System.out.println("[FAIL!]\n");
         }
 //        Double tem = Double.parseDouble(curTemp);
         int temp = (int)Math.round(curTemp);
@@ -77,11 +81,47 @@ public class CrosswindsController implements Initializable {
     public void goHome() throws IOException{
        Main.showMainMenu();
     }
+    
+    // gets the wind bearing and sets view components appropriately
+    public void getBearing() {
+        Double wb = 0.0;
+        try {
+            wb = Weather.getWindBearing();
+            System.out.println("Wind bearing:"+wb);
+            
+            if(wb==0 || wb==360) {
+                lblWindDir.setText("N");
+            } else if(wb<90 && wb>0) {
+                lblWindDir.setText("NE");
+                imgWindDirection.setRotate(imgWindDirection.getRotate()+45);
+            } else if(wb==90) {
+                lblWindDir.setText("E");
+            } else if(wb>90 && wb<180) {
+                lblWindDir.setText("SE");
+            } else if(wb==180) {
+                lblWindDir.setText("S");
+            } else if(wb>180 && wb<270) {
+                lblWindDir.setText("SW");
+            } else if(wb==270) {
+                lblWindDir.setText("W");
+            } else if(wb>270 && wb<360) {
+                lblWindDir.setText("NW");
+            } else {
+                lblWindDir.setText("-");
+            }
+            
+        } catch(Exception e) {
+            System.out.println("Wind bearing error");
+        }
+        
+        
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showTime();
         showTemperature();
+        getBearing();
         
         // load crosswind data...
         

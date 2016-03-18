@@ -189,6 +189,13 @@ public class Weather {
         String time = daily.getDay(0).sunsetTime();
         return time;
     }
+
+    static Double getWindBearing() {
+        initialise();
+        FIOCurrently currently = new FIOCurrently(fio);
+        Double b = currently.get().windBearing();
+        return b;
+    }
     
 }
 

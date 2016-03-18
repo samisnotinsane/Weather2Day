@@ -22,10 +22,10 @@
       </HBox>
       <VBox alignment="CENTER" layoutX="-3.0" layoutY="336.0" prefHeight="72.0" prefWidth="257.0">
          <children>
-            <Label id="lbl-loc-cty" fx:id="lblWindDir" alignment="CENTER" prefHeight="17.0" prefWidth="17.0" styleClass="lbl" text="N" wrapText="true" />
+            <Label id="lbl-loc-cty" fx:id="lblWindDir" alignment="CENTER" prefHeight="17.0" prefWidth="85.0" styleClass="lbl" text="N" wrapText="true" />
             <ImageView fx:id="imgWindDirection" fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/north-arrow.png" />
+                  <Image url="@res/up-slim-arrow.png" />
                </image></ImageView>
             <Label id="lbl-loc-con" fx:id="lblWindSpeed" alignment="CENTER" prefHeight="17.0" prefWidth="137.0" styleClass="lbl" text="0 km/h" wrapText="true" />
          </children>
@@ -59,7 +59,7 @@
             <Label fx:id="lblCurrentTime" prefHeight="17.0" prefWidth="60.0" styleClass="lbl" text="00:00" />
          </children>
       </HBox>
-      <HBox alignment="TOP_RIGHT" layoutX="4.0" layoutY="20.0" prefHeight="17.0" prefWidth="241.0" AnchorPane.rightAnchor="8.0">
+      <HBox alignment="TOP_RIGHT" layoutX="4.0" layoutY="20.0" prefHeight="17.0" prefWidth="235.0" AnchorPane.rightAnchor="14.0">
          <children>
             <Label fx:id="lblTemperature" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="41.0" styleClass="lbl" text="7°" />
          </children>
